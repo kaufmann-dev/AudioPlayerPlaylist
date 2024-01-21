@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audio-Playlist-Player</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/notify.min.js"></script>
+	<script type="text/javascript" src="js/howler.min.js"></script>
+	<script type="text/javascript" src="js/autoshrink.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
+</head>
+<body>
+	<div class="grid-container-wrapper">
+		<div class="grid-container">
+			<div class="img-container"><img></div>
+			<div class="move-around">Move me around!</div>
+			<div class="song-artist"></div>
+			<div class="song-title"></div>
+
+			<div class="download"><img src="img/download.png"></div>
+			<div class="stop"><img src="img/stop.png"></div>
+			<div class="rewind"><img src="img/rewind.png"></div>
+			<div class="play_pause"><img src="img/play.png"></div>
+			<div class="skip"><img src="img/skip.png"></div>
+			<div class="volume green"><img src="img/volume_bg.png"><input type="range" value="1" min="0" max="1" step="0.1"></div>
+
+			<div class="duration-left">00:00</div>
+			<div class="duration-main"><input type="range" value="0" min="0" step="1"></div>
+			<div class="duration-right"></div>
+		</div>
+	</div>
+
+	<div class="playlist">
+		<div class="artist">Cascada</div>
+			<div class="song" id="everytime_we_touch">Everytime We Touch (Nightcore)</div>
+		<div class="artist">Caramella Girls</div>
+			<div class="song" id="caramelldansen">Caramelldansen</div>
+		<div class="artist">Getter Jaani</div>
+			<div class="song" id="rockefeller_street">Rockefeller Street (Nightcore)</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 10000px;
+}
+
+
+
+.grid-container-wrapper {
+	pointer-events: none;
+	padding: 5px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.grid-container {
+	overflow: hidden;
+	pointer-events: auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #111;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	height: 420px;
+	width: 330px;
+
+	display: grid;
+	grid-template-columns: repeat(22, 1fr);
+	grid-template-rows: repeat(28, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+input[type=range] {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+input[type=range]:hover {
+	cursor: grab;
+}
+input[type=range]:active {
+	cursor: grabbing;
+}
+
+/* TOP */
+.grid-container .img-container {
+	grid-area: 1 / 1 / 23 / 23;
+	background-size: cover;
+}
+.grid-container .move-around {
+	text-shadow: 0px 0px 8px #000;
+	border-radius: 0 0 0 10px;
+	color: #fff;
+	text-align: center;
+	cursor: grab;
+	background-color: rgba(0,0,0,0.3);
+	grid-area: 1 / 17 / 4 / 23;
+}
+.grid-container .move-around:active {
+	cursor: grabbing;
+}
+.grid-container .song-title {
+	text-shadow: 0px 0px 8px #000;
+	cursor: default;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 35px;
+	line-height: 90px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.6);
+	grid-area: 17 / 1 / 23 / 23;
+}
+.grid-container .song-artist {
+	text-shadow: 0px 0px 8px #000;
+	cursor: default;
+	padding: 0 10px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 25px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.4);
+	grid-area: 13 / 1 / 17 / 23;
+}
+
+/* CONTROLS */
+.download:hover, .stop:hover, .rewind:hover, .skip:hover, .play_pause:hover, .green:hover {
+	border: 1px solid #5f5;
+}
+.red:hover {
+	border: 1px solid #f55;
+}
+.download img, .stop img, .rewind img, .skip img, .play_pause img, .img-container img, .volume img {
+	height: 100%;
+	width: 100%;
+}
+.grid-container .download {
+	transition: 0.3s;
+	cursor: pointer;
+	background-color: #222;
+	grid-area: 23 / 1 / 27 / 4;
+	/*background-size: cover;
+	background-image: url('img/download.png');*/
+}
+.grid-container .stop {
+	transition: 0.3s;
+	cursor: pointer;
+	background-color: #222;
+	grid-area: 23 / 4 / 27 / 7;
+	/*background-size: cover;
+	background-image: url('img/stop.png');*/
+}
+.grid-container .rewind {
+	transition: 0.3s;
+	cursor: pointer;
+	background-color: #222;
+	grid-area: 23 / 7 / 27 / 10;
+	/*background-size: cover;
+	background-image: url('img/rewind.png');*/
+}
+.grid-container .play_pause {
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: #111;
+	grid-area: 23 / 10 / 27 / 14;
+	/*background-size: cover;
+	background-image: url('img/play.png');*/
+}
+.grid-container .play_pause:hover {
+	border-radius: 50%;
+	background-color: #000;
+}
+.grid-container .skip {
+	transition: 0.3s;
+	cursor: pointer;
+	background-color: #222;
+	grid-area: 23 / 14 / 27 / 17;
+	/*background-size: cover;
+	background-image: url('img/skip.png');*/
+}
+.grid-container .volume {
+	transition: 0.3s;
+	cursor: pointer;
+	background-color: #222;
+	position: relative;
+	grid-area: 23 / 17 / 27 / 23;
+	padding: 0 5px;
+	/*background-size: cover;
+	background-image: url('img/volume_bg.png');*/
+}
+.grid-container .volume input[type=range] {
+	left: 5px;
+	width: calc(100% - 10px);
+}
+
+/* DURATION */
+.grid-container .duration-left {
+	cursor: default;
+	background-color: #333;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+	grid-area: 27 / 1 / 29 / 5;
+}
+.grid-container .duration-main {
+	background-color: #333;
+	position: relative;
+	grid-area: 27 / 5 / 29 / 19;
+}
+.grid-container .duration-main input[type=range] {
+	width: 100%;
+}
+.grid-container .duration-right {
+	cursor: default;
+	background-color: #333;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+	grid-area: 27 / 19 / 29 / 23;
+}
+
+
+
+div.playlist {
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 560px;
+	border: 1px solid #000;
+}
+div.playlist div:not(:last-child) {
+	border-bottom: 1px solid #000;
+}
+div.playlist .artist {
+	cursor: default;
+	background-color: #CCC;
+	padding: 10px;
+	width: 100%;
+}
+div.playlist .song {
+	cursor: pointer;
+	background-color: #EEE;
+	padding: 10px;
+	width: 100%;
+}
+div.playlist .song:hover {
+	background-color: #DDD;
+}
